@@ -36,9 +36,20 @@ This repository includes various searching algorithms implemented in Java:
 - **Binary Search**: An efficient search algorithm that works on sorted lists.
 - **Hashing**: An introduction to hashing techniques for efficient data retrieval.
 
+
 ## Testing ✔️
 
-Each data structure and algorithm implementation is accompanied by JUnit tests to ensure functionality and reliability. The tests validate the correctness of operations such as insertion, deletion, searching, sorting, and traversal.
+Many of the implementations are accompanied by **JUnit tests** to ensure functionality and reliability, particularly for operations like insertion, deletion, searching, sorting, and traversal.
+
+**Exceptions**:  
+The following modules currently do not have JUnit tests:  
+
+- **Lab_BinaryTree**  
+- **Lab_CircularQueueArray**  
+- **Lab_CircularQueueLink**  
+- **Sorting, Searching and Graph algorithms**
+
+Feel free to contribute tests if you'd like to extend the repository!
 
 ## Installation 💻
 
