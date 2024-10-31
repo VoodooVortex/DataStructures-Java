@@ -146,12 +146,37 @@ public class ArrayList implements Collection{
         return merge(left, right);
     }
 
+//    public Object[] merge(Object[] l, Object[] r){
+//        int ri = 0, li = 0, i = 0;
+//        Object[] result = new Object[l.length + r.length];
+//
+//        while (ri < r.length && li < l.length){
+//            if (Integer.parseInt((String) l[li]) > Integer.parseInt((String) r[ri])){
+//                result[i++] = r[ri++];
+//            }else {
+//                result[i++] = l[li++];
+//            }
+//        }
+//
+//        while (li < l.length){
+//            result[i++] = l[li++];
+//        }
+//
+//        while (ri < r.length){
+//            result[i++] = r[ri++];
+//        }
+//
+//        return result;
+//    }
+
+
+    // ถ้า > 0 คือจาก A-Z และ ถ้า < 0 คือจาก Z-A
     public Object[] merge(Object[] l, Object[] r){
         int ri = 0, li = 0, i = 0;
         Object[] result = new Object[l.length + r.length];
 
         while (ri < r.length && li < l.length){
-            if (Integer.parseInt((String) l[li]) > Integer.parseInt((String) r[ri])){
+            if (String.valueOf(l[li]).compareTo(String.valueOf(r[ri])) > 0){
                 result[i++] = r[ri++];
             }else {
                 result[i++] = l[li++];
@@ -169,39 +194,37 @@ public class ArrayList implements Collection{
         return result;
     }
 
+
     public void sort_quick() {
         quickSort(arry, 0, arry.length-1);
     }
 
-    public void quickSort(Object[] arr, int left, int right){
-
-        if (right <= left) return;
-
-        int i = left-1;
-        int j = left;
-        Object temp;
-        Object pivot = arr[right];
-
-        while (j < right){
-            if (Integer.parseInt((String) arr[j]) < Integer.parseInt((String) pivot)) {
-                i++;
-                temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
-            }
-            j++;
-        }
-
-        i++;
-        temp = arr[i];
-        arr[i] = arr[right];
-        arr[right] = temp;
-
-        if (left < i-1) quickSort(arr, left, (i-1));
-        if (i+1 < right) quickSort(arr, (i+1), right);
-
-
-
+//    public void quickSort(Object[] arr, int left, int right){
+////        if (right <= left) return;
+////
+////        int i = left-1;
+////        int j = left;
+////        Object temp;
+////        Object pivot = arr[right];
+////
+////        while (j < right){
+////            if (Integer.parseInt((String) arr[j]) < Integer.parseInt((String) pivot)) {
+////                i++;
+////                temp = arr[i];
+////                arr[i] = arr[j];
+////                arr[j] = temp;
+////            }
+////            j++;
+////        }
+////
+////        i++;
+////        temp = arr[i];
+////        arr[i] = arr[right];
+////        arr[right] = temp;
+////
+////        if (left < i-1) quickSort(arr, left, (i-1));
+////        if (i+1 < right) quickSort(arr, (i+1), right);
+//
 //        int i = left;
 //        int j = right;
 //        Object temp;
@@ -225,6 +248,36 @@ public class ArrayList implements Collection{
 //
 //        if (left < j) quickSort(arr, left, j);
 //        if (i < right) quickSort(arr, i, right);
+//    }
+
+
+    //ลูปแรก < 0 ลูปสอง > 0 จะเป็น A-Z แต่ถ้า ลูปแรก > 0 ลูปสอง < 0 จะเป็น Z-A
+    public void quickSort(Object[] arr, int left, int right){
+        int i = left;
+        int j = right;
+        Object temp;
+        Object pivot = arr[(left+right)/2];
+
+        while (i <= j){
+            //ลูปแรก
+            while (String.valueOf(arr[i]).compareTo(String.valueOf(pivot)) < 0){
+                i++;
+            }
+            //ลูปสอง
+            while (String.valueOf(arr[j]).compareTo(String.valueOf(pivot)) > 0){
+                j--;
+            }
+            if (i <= j){
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+                i++;
+                j--;
+            }
+        }
+
+        if (left < j) quickSort(arr, left, j);
+        if (i < right) quickSort(arr, i, right);
     }
 
 }

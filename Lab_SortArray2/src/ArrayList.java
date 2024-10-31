@@ -116,11 +116,25 @@ public class ArrayList implements Collection{
         System.out.println("]");
     }
 
+//    public void sort_bubble() {
+//        Object temp;
+//        for (int i = 0; i < size(); i++) {
+//            for (int j = size()-1; j > i; j--) {
+//                if (Integer.parseInt((String) arry[j]) < Integer.parseInt((String) arry[j-1])){
+//                    temp = arry[j];
+//                    arry[j] = arry[j-1];
+//                    arry[j-1] = temp;
+//                }
+//            }
+//        }
+//    }
+
+    // ถ้า < 0 คือจาก A-Z และ ถ้า > 0 คือจาก Z-A
     public void sort_bubble() {
         Object temp;
         for (int i = 0; i < size(); i++) {
             for (int j = size()-1; j > i; j--) {
-                if (Integer.parseInt((String) arry[j]) < Integer.parseInt((String) arry[j-1])){
+                if (String.valueOf(arry[j]).compareTo(String.valueOf(arry[j-1])) > 0){
                     temp = arry[j];
                     arry[j] = arry[j-1];
                     arry[j-1] = temp;
@@ -129,13 +143,33 @@ public class ArrayList implements Collection{
         }
     }
 
+//    public void sort_shell() {
+//        int gap = size()/2;
+//        String temp;
+//        do {
+//            for (int i = gap; i < size(); i++) {
+//                for (int j = i-gap; j > -1; j -= gap) {
+//                    if (Integer.parseInt((String) arry[i]) < Integer.parseInt((String) arry[j])){
+//                        temp = (String) arry[i];
+//                        arry[i] = arry[j];
+//                        arry[j] = temp;
+//                    }else {
+//                        break;
+//                    }
+//                }
+//            }
+//            gap = gap/2;
+//        }while (gap > 0);
+//    }
+
+    // ถ้า < 0 คือจาก A-Z และ ถ้า > 0 คือจาก Z-A
     public void sort_shell() {
         int gap = size()/2;
         String temp;
         do {
             for (int i = gap; i < size(); i++) {
                 for (int j = i-gap; j > -1; j -= gap) {
-                    if (Integer.parseInt((String) arry[i]) < Integer.parseInt((String) arry[j])){
+                    if (String.valueOf(arry[i]).compareTo(String.valueOf(arry[j])) < 0){
                         temp = (String) arry[i];
                         arry[i] = arry[j];
                         arry[j] = temp;
@@ -147,5 +181,29 @@ public class ArrayList implements Collection{
             gap = gap/2;
         }while (gap > 0);
     }
+    //ของ chat เรียงตัวอักษรเหมือนกัน
+//    public void sort_shell() {
+//        int gap = size() / 2;
+//        String temp;
+//
+//        while (gap > 0) {
+//            for (int i = gap; i < size(); i++) {
+//                temp = (String) arry[i];
+//                int j = i;
+//
+//                // เลื่อนค่าไปตาม gap จนเจอตำแหน่งที่เหมาะสม
+//                while (j >= gap && String.valueOf(temp).compareTo(String.valueOf(arry[j - gap])) < 0) {
+//                    arry[j] = arry[j - gap];
+//                    j -= gap;
+//                }
+//
+//                // แทรกค่า temp ลงในตำแหน่งที่ถูกต้อง
+//                arry[j] = temp;
+//            }
+//
+//            // ลด gap ลงครึ่งหนึ่งในทุกลูป
+//            gap /= 2;
+//        }
+//    }
 
 }

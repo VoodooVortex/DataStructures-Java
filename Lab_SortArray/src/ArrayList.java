@@ -116,12 +116,28 @@ public class ArrayList implements Collection{
         System.out.println("]");
     }
 
+//    public void sort_insertion() {
+//        String temp;
+//        for (int i = 1; i < arry.length; i++) {
+//            temp = (String) arry[i];
+//            for (int j = i-1; j > -1; j--) {
+//                if (Integer.parseInt(temp) < Integer.parseInt((String) arry[j]) ) {
+//                    arry[j+1] = arry[j];
+//                    arry[j] = temp;
+//                } else {
+//                    break;
+//                }
+//            }
+//        }
+//    }
+
+    // ถ้า < 0 คือจาก A-Z และ ถ้า > 0 คือจาก Z-A
     public void sort_insertion() {
         String temp;
         for (int i = 1; i < arry.length; i++) {
             temp = (String) arry[i];
             for (int j = i-1; j > -1; j--) {
-                if (Integer.parseInt(temp) < Integer.parseInt((String) arry[j]) ) {
+                if (temp.compareTo(String.valueOf(arry[j])) < 0) {
                     arry[j+1] = arry[j];
                     arry[j] = temp;
                 } else {
@@ -131,6 +147,23 @@ public class ArrayList implements Collection{
         }
     }
 
+//    public void sort_selection() {
+//        String temp;
+//        int min;
+//        for (int i = 0; i < arry.length-1; i++) {
+//            min = i;
+//            temp = (String) arry[i];
+//            for (int j = i+1; j < arry.length; j++) {
+//                if (Integer.parseInt((String) arry[min]) > Integer.parseInt((String) arry[j])){
+//                    min = j;
+//                }
+//            }
+//            arry[i] = arry[min];
+//            arry[min] = temp;
+//        }
+//    }
+
+    // ถ้า < 0 คือจาก A-Z และ ถ้า > 0 คือจาก Z-A
     public void sort_selection() {
         String temp;
         int min;
@@ -138,7 +171,7 @@ public class ArrayList implements Collection{
             min = i;
             temp = (String) arry[i];
             for (int j = i+1; j < arry.length; j++) {
-                if (Integer.parseInt((String) arry[min]) > Integer.parseInt((String) arry[j])){
+                if (String.valueOf(arry[j]).compareTo(String.valueOf(arry[min])) < 0){
                     min = j;
                 }
             }

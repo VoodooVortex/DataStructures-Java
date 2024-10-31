@@ -1,0 +1,110 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2820
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 .SFNS-Bold;\f1\fnil\fcharset0 .SFNS-Regular;\f2\fnil\fcharset0 .AppleSystemUIFontMonospaced-Regular;
+}
+{\colortbl;\red255\green255\blue255;\red14\green14\blue14;}
+{\*\expandedcolortbl;;\cssrgb\c6700\c6700\c6700;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f0\b\fs30 \cf2 \uc0\u3586 \u3633 \u3657 \u3609 \u3605 \u3629 \u3609 \u3623 \u3636 \u3608 \u3637 \u3585 \u3634 \u3619 \u3648 \u3619 \u3637 \u3618 \u3591 \u3621 \u3635 \u3604 \u3633 \u3610 \u3605 \u3633 \u3623 \u3629 \u3633 \u3585 \u3625 \u3619  (Bubble Sort Algorithm)
+\f1\b0\fs28 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl324\slmult1\pardirnatural\partightenfactor0
+
+\f0\b \cf2 Input:
+\f1\b0  \uc0\u3586 \u3657 \u3629 \u3588 \u3623 \u3634 \u3617 \u3607 \u3637 \u3656 \u3605 \u3657 \u3629 \u3591 \u3585 \u3634 \u3619 \u3648 \u3619 \u3637 \u3618 \u3591 \u3621 \u3635 \u3604 \u3633 \u3610  \u3648 \u3594 \u3656 \u3609  
+\f2 "HelloWorld"
+\f1 \
+
+\f0\b Output:
+\f1\b0  \uc0\u3586 \u3657 \u3629 \u3588 \u3623 \u3634 \u3617 \u3607 \u3637 \u3656 \u3592 \u3633 \u3604 \u3648 \u3619 \u3637 \u3618 \u3591 \u3605 \u3633 \u3623 \u3629 \u3633 \u3585 \u3625 \u3619 \u3649 \u3621 \u3657 \u3623  \u3648 \u3594 \u3656 \u3609  
+\f2 "HWdellloor"\
+\
+import java.util.Scanner;\
+\
+public class SortCharactersBubbleSort \{\
+    public static void main(String[] args) \{\
+        Scanner scanner = new Scanner(System.in);\
+\
+        // \uc0\u3619 \u3633 \u3610 \u3586 \u3657 \u3629 \u3588 \u3623 \u3634 \u3617 \u3592 \u3634 \u3585 \u3612 \u3641 \u3657 \u3651 \u3594 \u3657 \
+        System.out.print("\uc0\u3585 \u3619 \u3640 \u3603 \u3634 \u3585 \u3619 \u3629 \u3585 \u3586 \u3657 \u3629 \u3588 \u3623 \u3634 \u3617 : ");\
+        String input = scanner.nextLine();\
+\
+        // \uc0\u3649 \u3611 \u3621 \u3591 \u3586 \u3657 \u3629 \u3588 \u3623 \u3634 \u3617 \u3648 \u3611 \u3655 \u3609 \u3629 \u3634 \u3619 \u3660 \u3648 \u3619 \u3618 \u3660 \u3586 \u3629 \u3591  char\
+        char[] characters = input.toCharArray();\
+\
+        // \uc0\u3648 \u3619 \u3637 \u3618 \u3591 \u3621 \u3635 \u3604 \u3633 \u3610 \u3605 \u3633 \u3623 \u3629 \u3633 \u3585 \u3625 \u3619 \u3650 \u3604 \u3618 \u3651 \u3594 \u3657  Bubble Sort\
+        for (int i = 0; i < characters.length - 1; i++) \{\
+            for (int j = 0; j < characters.length - 1 - i; j++) \{\
+                if (characters[j] > characters[j + 1]) \{\
+                    // \uc0\u3626 \u3621 \u3633 \u3610 \u3605 \u3635 \u3649 \u3627 \u3609 \u3656 \u3591 \
+                    char temp = characters[j];\
+                    characters[j] = characters[j + 1];\
+                    characters[j + 1] = temp;\
+                \}\
+            \}\
+        \}\
+\
+        // \uc0\u3649 \u3626 \u3604 \u3591 \u3612 \u3621 \u3621 \u3633 \u3614 \u3608 \u3660 \u3627 \u3621 \u3633 \u3591 \u3592 \u3634 \u3585 \u3585 \u3634 \u3619 \u3648 \u3619 \u3637 \u3618 \u3591 \u3621 \u3635 \u3604 \u3633 \u3610 \
+        System.out.print("\uc0\u3586 \u3657 \u3629 \u3588 \u3623 \u3634 \u3617 \u3607 \u3637 \u3656 \u3648 \u3619 \u3637 \u3618 \u3591 \u3621 \u3635 \u3604 \u3633 \u3610 \u3649 \u3621 \u3657 \u3623 : ");\
+        for (char c : characters) \{\
+            System.out.print(c);\
+        \}\
+\
+        scanner.close();\
+    \}\
+\}\
+\
+
+\f0\b lexicographical order
+\f1\b0  \uc0\u3627 \u3619 \u3639 \u3629 \u3585 \u3634 \u3619 \u3648 \u3619 \u3637 \u3618 \u3591 \u3621 \u3635 \u3604 \u3633 \u3610 \u3605 \u3634 \u3617 \u3614 \u3592 \u3609 \u3634 \u3609 \u3640 \u3585 \u3619 \u3617 \u3652 \u3604 \u3657 \
+\
+import java.util.Scanner;\
+\
+public class CompareTwoWords \{\
+    public static void main(String[] args) \{\
+        Scanner scanner = new Scanner(System.in);\
+\
+        // \uc0\u3619 \u3633 \u3610 \u3588 \u3635  2 \u3588 \u3635 \u3592 \u3634 \u3585 \u3612 \u3641 \u3657 \u3651 \u3594 \u3657 \
+        System.out.print("\uc0\u3585 \u3619 \u3640 \u3603 \u3634 \u3585 \u3619 \u3629 \u3585 \u3588 \u3635 \u3607 \u3637 \u3656  1: ");\
+        String word1 = scanner.nextLine();\
+\
+        System.out.print("\uc0\u3585 \u3619 \u3640 \u3603 \u3634 \u3585 \u3619 \u3629 \u3585 \u3588 \u3635 \u3607 \u3637 \u3656  2: ");\
+        String word2 = scanner.nextLine();\
+\
+        // \uc0\u3648 \u3611 \u3619 \u3637 \u3618 \u3610 \u3648 \u3607 \u3637 \u3618 \u3610 \u3588 \u3635 \u3607 \u3633 \u3657 \u3591 \u3626 \u3629 \u3591 \
+        int comparisonResult = word1.compareTo(word2);\
+\
+        // \uc0\u3649 \u3626 \u3604 \u3591 \u3612 \u3621 \u3621 \u3633 \u3614 \u3608 \u3660 \u3585 \u3634 \u3619 \u3648 \u3611 \u3619 \u3637 \u3618 \u3610 \u3648 \u3607 \u3637 \u3618 \u3610 \
+        if (comparisonResult < 0) \{\
+            System.out.println("\uc0\u3588 \u3635 \u3607 \u3637 \u3656 \u3648 \u3619 \u3637 \u3618 \u3591 \u3621 \u3635 \u3604 \u3633 \u3610 \u3585 \u3656 \u3629 \u3609 \u3588 \u3639 \u3629 : " + word1);\
+        \} else if (comparisonResult > 0) \{\
+            System.out.println("\uc0\u3588 \u3635 \u3607 \u3637 \u3656 \u3648 \u3619 \u3637 \u3618 \u3591 \u3621 \u3635 \u3604 \u3633 \u3610 \u3585 \u3656 \u3629 \u3609 \u3588 \u3639 \u3629 : " + word2);\
+        \} else \{\
+            System.out.println("\uc0\u3607 \u3633 \u3657 \u3591 \u3626 \u3629 \u3591 \u3588 \u3635 \u3648 \u3627 \u3617 \u3639 \u3629 \u3609 \u3585 \u3633 \u3609 ");\
+        \}\
+\
+        scanner.close();\
+    \}\
+\}\
+\
+\uc0\u3651 \u3594 \u3657  
+\f2 compareTo()
+\f1  \uc0\u3648 \u3611 \u3619 \u3637 \u3618 \u3610 \u3648 \u3607 \u3637 \u3618 \u3610 \u3588 \u3635 :\
+\pard\tqr\tx500\tx660\li660\fi-660\sl324\slmult1\sb240\partightenfactor0
+\cf2 	\'95	\uc0\u3627 \u3634 \u3585  
+\f2 comparisonResult < 0
+\f1  \uc0\u3627 \u3617 \u3634 \u3618 \u3606 \u3638 \u3591  
+\f2 word1
+\f1  \uc0\u3617 \u3634 \u3629 \u3618 \u3641 \u3656 \u3585 \u3656 \u3629 \u3609  
+\f2 word2
+\f1  \uc0\u3651 \u3609 \u3621 \u3635 \u3604 \u3633 \u3610 \u3614 \u3592 \u3609 \u3634 \u3609 \u3640 \u3585 \u3619 \u3617 \
+	\'95	\uc0\u3627 \u3634 \u3585  
+\f2 comparisonResult > 0
+\f1  \uc0\u3627 \u3617 \u3634 \u3618 \u3606 \u3638 \u3591  
+\f2 word2
+\f1  \uc0\u3617 \u3634 \u3629 \u3618 \u3641 \u3656 \u3585 \u3656 \u3629 \u3609  
+\f2 word1
+\f1 \
+	\'95	\uc0\u3627 \u3634 \u3585  
+\f2 comparisonResult == 0
+\f1  \uc0\u3649 \u3626 \u3604 \u3591 \u3623 \u3656 \u3634 \u3588 \u3635 \u3607 \u3633 \u3657 \u3591 \u3626 \u3629 \u3591 \u3648 \u3627 \u3617 \u3639 \u3629 \u3609 \u3585 \u3633 \u3609 }
